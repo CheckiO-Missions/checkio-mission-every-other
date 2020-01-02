@@ -1,20 +1,20 @@
 <!-- Describe task in general -->
 
 <p>
-    Sum two passed ints
+    Every other element of a give array should be changed to 0, starting with the first one.
 </p>
 
 <p style="text-align: center;">
-    <img  title="example" src="{{MEDIA}}example.png" alt="example" style="max-height: 83px"/>
+    <img  title="example" src="{{MEDIA}}example.png" alt="example" style="max-height: 150px"/>
 </p>
 
 <!-- Explain input and output values -->
 <p>
-    <strong>Input: </strong> Two arguments. Both are ints.
+    <strong>Input: </strong> {% if interpreter.slug == "js-node" %}Array{% else %}Iterable{% endif %}
 </p>
 
 <p>
-    <strong>Output: </strong> Int. 
+    <strong>Output: </strong> {% if interpreter.slug == "js-node" %}Array{% else %}Iterable{% endif %}
 </p>
 
 
@@ -25,28 +25,13 @@
     </p>
 
 {% if interpreter.slug == "js-node" %}
-<pre class="brush: javascript">sumTwo(2, 3) == 5
-sumTwo(5, 7) == 12
+<pre class="brush: javascript">everyOther([1, 2, 3, 4, 5]) == [0, 2, 0, 4, 0]
+everyOther([0, 0, 0]) == [0, 0, 0]
 </pre>
 {% else %}
-<pre class="brush: python">sum_two(2, 3) == 5
-sum_two(5, 7) == 12
+<pre class="brush: python">every_other([1, 2, 3, 4, 5]) == [0, 2, 0, 4, 0]
+every_other([0, 0, 0]) == [0, 0, 0]
 </pre>
 {% endif %}
 </div>
 
-
-<!-- Here you can explain how it can be used in development -->
-<!-- The section is optional -->
-<p class="for_info_only">
-
-    <strong>How it’s used: </strong>
-    <i>(math is used everywhere)</i>
-</p>
-
-<!-- Here you can explain some constraints for input-->
-<!-- The section is optional -->
-<p>
-    <strong>Precondition:</strong>
-    <i>both given ints should be between -1000 and 1000</i>
-</p>
